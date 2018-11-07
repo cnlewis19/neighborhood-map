@@ -6,7 +6,7 @@ class App extends Component {
   state = {
     lat:  42.8864,
     lon: -78.8784,
-    zoom: 11,
+    zoom: 10,
     all: restaurants
   }
 
