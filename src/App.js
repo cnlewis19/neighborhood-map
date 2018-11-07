@@ -5,7 +5,7 @@ import MapContainer from "./Components/map.js";
 class App extends Component {
   state = {
     lat:  42.8864,
-    lon: -78.8784,
+    lng: -78.8784,
     zoom: 10,
     all: restaurants
   }
@@ -19,7 +19,7 @@ class App extends Component {
 
         <MapContainer
           lat={this.state.lat}
-          lon={this.state.lon}
+          lng={this.state.lng}
           zoom={this.state.zoom}
           locations={this.state.all} />
       </div>
