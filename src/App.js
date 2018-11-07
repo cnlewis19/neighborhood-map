@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import restaurants from "./restaurants.json";
+import MapContainer from "./Components/map.js";
 
-const mapStyles = {
-  width: '100%',
-  height: '100%'
-}
-const API_KEY = `${process.env.REACT_APP_MAPS_API_KEY}`
+class App extends Component {
+  state = {
+    lat:  42.8864,
+    lon: -78.8784,
+    zoom: 11,
+    all: restaurants
+  }
 
-export class MapContainer extends Component {
-  render() {
+  render = () => {
     return (
-      <Map
-      google={this.props.google}
-      zoom={11}
-      style={mapStyles}
-      initialCenter={{
-        lat: 42.8864,
-        lng: -78.8784
-      }}
-    />
-  );
-}
+      <div>
+        <div>
+          <h1> Great Gluten Free in Buffalo NY </h1>
+        </div>
+
+        <MapContainer
+          lat={this.state.lat}
+          lon={this.state.lon}
+          zoom={this.state.zoom}
+          locations={this.state.all} />
+      </div>
+    );
+  }
 }
 
-export default GoogleApiWrapper({
 
-  apiKey: API_KEY
-})(MapContainer);
+export default App;
