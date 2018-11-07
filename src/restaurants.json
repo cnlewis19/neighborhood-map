@@ -1,0 +1,83 @@
+[
+  {
+    "name":"Curly's Bar & Grille",
+    "street": "647 Ridge Rd.",
+    "city":"Lackawanna",
+    "state": "NY",
+    "zip":"14218",
+    "url":"https://www.curlysgrille.com",
+    "pos":{"lat":42.825650,"lng":-78.827570}
+  },
+  {
+    "name":"Mangia Ristorante",
+    "street":"4264 North Buffalo Rd.",
+    "city":"Orchard Park",
+    "state":"NY",
+    "zip":"14217",
+    "url":"https://mangiaristorante.com",
+    "pos":{"lat":42.767490,"lng":-78.744190}
+  },
+  {
+    "name":"Remington Tavern",
+    "street":"184 Sweeney Street",
+    "city": "North Tonawanda",
+    "state": "NY",
+    "zip": "14210",
+    "url":"http://wwww.remingtontavern.com",
+    "pos": {"lat":43.023180,"lng":-78.873840}
+  },
+  {
+    "name":"Brick Oven Bistro",
+    "street":"904 Abbott Rd.",
+    "city":"Buffalo",
+    "state":"NY",
+    "zip":"14220",
+    "url":"http://www.brickovendeli.com",
+    "pos": {"lat":42.8396716,"lng":-78.8077567}
+  },
+  {
+    "name":"Sweet Pea Bakery",
+    "street":"1 S Buffalo Street",
+    "city":"Hamburg",
+    "state":"NY",
+    "zip": "14075",
+    "url":"https://www.sweetpeabakerywny.com",
+    "pos": {"lat":42.713850,"lng":-78.829540}
+  },
+  {
+    "name":"Kith & Kin Restaurant and Bistro",
+    "street":"5850 Transit Road",
+    "city": "Lockport",
+    "state": "NY",
+    "zip": "14094",
+    "url":"http://kkbakeshop.com",
+    "pos": {"lat":43.140430,"lng":-78.697920}
+  },
+  {
+    "name":"Pizza Plant",
+    "street": "125 Main Street",
+    "city": "Buffalo",
+    "state": "NY",
+    "zip": "14203",
+    "url": "http://www.pizzaplant.com",
+    "pos": {"lat":42.830770,"lng":-78.770140}
+  },
+  {
+    "name":"Poppyseed Restaurant",
+    "street":"3670 McKinley Pkwy",
+    "city":"Blasdell",
+    "state": "NY",
+    "zip":"14219",
+    "url":"https://poppyseedrestaurant.com",
+    "pos":{"lat":42.785650,"lng":-78.811410}
+  },
+  {
+    "name":"The Melting Pot",
+    "street":"1 Walden Galleria",
+    "city":"Buffalo",
+    "state": "NY",
+    "zip": "14225",
+    "url": "https://www.meltingpot.com",
+    "pos":{"lat":42.909540,"lng":-78.759260}
+  },
+]
