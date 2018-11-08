@@ -90,6 +90,10 @@ updateMarkers = (locations) => {
       key:index,
       index,
       name: location.name,
+      street: location.street,
+      city: location.city,
+      state: location.state,
+      zip: location.zip,
       position: location.pos,
       url: location.url
     };
@@ -130,6 +134,9 @@ updateMarkers = (locations) => {
               onClose={this.closeInfoWindow}>
               <div>
                   <h3>{activeProps && activeProps.name}</h3>
+                  <p>{activeProps && activeProps.street} </p>
+                  <p> {activeProps && activeProps.city}, {activeProps && activeProps.state} </p>
+                  <p> {activeProps && activeProps.zip} </p>
                   {activeProps && activeProps.url
                       ? (
                           <a href={activeProps.url}>See website</a>

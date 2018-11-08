@@ -1,6 +1,6 @@
 [
   {
-    "name":"Curly's Bar & Grille",
+    "name":"Curly's Grill and Banquet Center",
     "street": "647 Ridge Rd.",
     "city":"Lackawanna",
     "state": "NY",
@@ -54,13 +54,13 @@
     "pos": {"lat":43.140430,"lng":-78.697920}
   },
   {
-    "name":"Pizza Plant",
+    "name":"Pizza Plant Italian Pub",
     "street": "125 Main Street",
     "city": "Buffalo",
     "state": "NY",
     "zip": "14203",
     "url": "http://www.pizzaplant.com",
-    "pos": {"lat":42.830770,"lng":-78.770140}
+    "pos": {"lat":42.878573,"lng":-78.876323}
   },
   {
     "name":"Poppyseed Restaurant",
