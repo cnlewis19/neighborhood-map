@@ -16,7 +16,9 @@ export class MapContainer extends Component {
     activeMarkerProps: null,
     infoWindowVisible: false
   }
-  mapReady =(props, map) => {
+  componentDidMount = () => {}
+
+  mapReady = (props, map) => {
     this.setState({map});
     this.updateMarkers(this.props.locations);
   }
@@ -54,24 +56,24 @@ onMarkerClick = (props, marker, e) => {
       };
 
       if (activeMarkerProps.foursquare) {
-        let url = `https://api.foursquare.com/v2/venues/${restaurant[0].id}/photos?client_id=${FS_CLIENT}&client_secret=${FS_SECRET}&v=${FS_VERSION}`;
-        fetch(url)
-          .then(response => response.json())
-          .then(result => {
-            activeMarkerProps = {
-              ...activeMarkerProps,
-              images: result.response.photos
-            };
-            if(this.state.activeMarker)
-              this.state.activeMarker.setAnimation(null);
-            marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
-            this.setState({showingInfoWindow: true, activeMarker: marker, activeMarkerProps: props});
-          })
-        } else {
-            marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
-            this.setState({showingInfoWindow: true, activeMarker: marker, activeMarkerProps: props});
-        }
-    })
+          let url = `https://api.foursquare.com/v2/venues/${restaurant[0].id}/photos?client_id=${FS_CLIENT}&client_secret=${FS_SECRET}&v=${FS_VERSION}`;
+          fetch(url)
+              .then(response => response.json())
+              .then(result => {
+                  activeMarkerProps = {
+                      ...activeMarkerProps,
+                      images: result.response.photos
+                  };
+                  if (this.state.activeMarker)
+                      this.state.activeMarker.setAnimation(null);
+                  marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
+                  this.setState({showingInfoWindow: true, activeMarker: marker, activeMarkerProps});
+              })
+      } else {
+          marker.setAnimation(this.props.google.maps.Animation.BOUNCE);
+          this.setState({showingInfoWindow: true, activeMarker: marker, activeMarkerProps});
+      }
+  })
 }
 updateMarkers = (locations) => {
   if (!locations)
@@ -122,29 +124,29 @@ updateMarkers = (locations) => {
         lng: -78.8784
       }}
       onClick={this.closeInfoWindow}>
-      <InfoWindow
-        marker={this.state.activeMarker}
-        visible={this.state.showingInfoWindow}
-        onClose={this.closeInfoWindow}>
-        <div>
-          <h3>{activeProps && activeProps.name}</h3>
-          {activeProps && activeProps.url
-            ? (
-              <a href={activeProps.url}>Visit website</a>
-            )
-          : ""}
-          {activeProps && activeProps.images
-            ? (
-              <div><img
-                alt={activeProps.name + " picture"}
-                src={activeProps.images.items[0].prefix + "100x100"  + activeProps.images.items[0].suffix}/>
-                <p> Image Courtesy of Foursquare </p>
+          <InfoWindow
+              marker={this.state.activeMarker}
+              visible={this.state.showingInfoWindow}
+              onClose={this.closeInfoWindow}>
+              <div>
+                  <h3>{activeProps && activeProps.name}</h3>
+                  {activeProps && activeProps.url
+                      ? (
+                          <a href={activeProps.url}>See website</a>
+                      )
+                      : ""}
+                  {activeProps && activeProps.images
+                      ? (
+                          <div><img
+                              alt={activeProps.name + "  picture"}
+                              src={activeProps.images.items[0].prefix + "100x100" + activeProps.images.items[0].suffix}/>
+                              <p>Image courtesy of Foursquare</p>
+                          </div>
+                      )
+                      : ""
+                  }
               </div>
-            )
-            : ""
-          }
-        </div>
-      </InfoWindow>
+          </InfoWindow>
       </Map>
   )
 }
