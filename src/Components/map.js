@@ -23,7 +23,7 @@ export class MapContainer extends Component {
     this.updateMarkers(this.props.locations);
   }
 
-  componentReceivesProps = (props) => {
+  componentWillReceiveProps = (props) => {
          this.setState({firstDrop: false});
          if (this.state.markers.length !== props.locations.length) {
              this.closeInfoWindow();
@@ -37,10 +37,11 @@ export class MapContainer extends Component {
              (this.state.markers[props.selectedIndex] !== this.state.activeMarker))) {
              this.closeInfoWindow();
          }
-         
+
          if (props.selectedIndex === null || typeof(props.selectedIndex) === "undefined") {
              return;
          };
+         this.onMarkerClick(this.state.markerProps[props.selectedIndex], this.state.markers[props.selectedIndex]);
      }
 
 closeInfoWindow = () => {

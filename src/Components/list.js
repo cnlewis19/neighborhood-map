@@ -30,7 +30,7 @@ class List extends Component {
                 .map((location, index) => {
                   return(
                     <li key={index} className="drawer-list">
-                      <button key={index}>{location.name}</button>
+                      <button key={index} onClick={e => this.props.clickSearch(index)}>{location.name}</button>
                     </li>
                   )
                 })}
