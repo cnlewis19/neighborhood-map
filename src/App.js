@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import restaurants from "./restaurants.json";
+import locations from "./restaurants.json";
 import './App.css';
 import MapContainer from "./Components/map.js";
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -15,7 +15,9 @@ class App extends Component {
     lat:  42.8864,
     lng: -78.8784,
     zoom: 10,
-    all: restaurants
+    all: locations,
+    filtered: null,
+    open: false,
   }
 
   componentDidMount = () => {

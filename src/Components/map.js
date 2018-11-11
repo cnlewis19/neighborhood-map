@@ -22,6 +22,27 @@ export class MapContainer extends Component {
     this.setState({map});
     this.updateMarkers(this.props.locations);
   }
+
+  componentReceivesProps = (props) => {
+         this.setState({firstDrop: false});
+         if (this.state.markers.length !== props.locations.length) {
+             this.closeInfoWindow();
+             this.updateMarkers(props.locations);
+             this.setState({activeMarker: null});
+
+             return;
+         }
+
+         if (!props.selectedIndex || (this.state.activeMarker &&
+             (this.state.markers[props.selectedIndex] !== this.state.activeMarker))) {
+             this.closeInfoWindow();
+         }
+         
+         if (props.selectedIndex === null || typeof(props.selectedIndex) === "undefined") {
+             return;
+         };
+     }
+
 closeInfoWindow = () => {
   this.state.activeMarker && this
     .state
@@ -119,6 +140,8 @@ updateMarkers = (locations) => {
     let activeProps = this.state.activeMarkerProps;
     return (
       <Map
+      role="application"
+      aria-label="map"
       google={this.props.google}
       onReady={this.mapReady}
       zoom={this.props.zoom}
