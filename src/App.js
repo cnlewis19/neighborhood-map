@@ -7,10 +7,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import List from './Components/list.js';
 
+//Adds the icon for the list function to be called later
 library.add(faBars)
 
 
 class App extends Component {
+  //Sets initial map specs
   state = {
     lat:  42.8864,
     lng: -78.8784,
@@ -33,6 +35,7 @@ class App extends Component {
     });
   }
 
+  //Search Procdures are covered in the next three functions
   updateQuery = (query) => {
     this.setState({
       ...this.state,

@@ -17,13 +17,13 @@ export class MapContainer extends Component {
     activeMarkerProps: null,
     infoWindowVisible: false
   }
-  componentDidMount = () => {}
+
 
   mapReady = (props, map) => {
     this.setState({map});
     this.updateMarkers(this.props.locations);
   }
-
+//Allows for filtering on map when searching
   componentWillReceiveProps = (props) => {
          this.setState({firstDrop: false});
          if (this.state.markers.length !== props.locations.length) {
@@ -58,6 +58,7 @@ getRestaurantInfo = (props, data) => {
     .venues
     .filter(item => item.name.includes(props.name) || props.name.includes(item.name));
 }
+//Sets infowindow specifications
 onMarkerClick = (props, marker, e) => {
   this.closeInfoWindow();
   let url = `https://api.foursquare.com/v2/venues/search?client_id=${FS_CLIENT}&client_secret=${FS_SECRET}&v=${FS_VERSION}&radius=100&ll=${props.position.lat},${props.position.lng}&llAcc=100`;
@@ -98,6 +99,8 @@ onMarkerClick = (props, marker, e) => {
       }
   })
 }
+
+//Sets markers and their specs
 updateMarkers = (locations) => {
   if (!locations)
     return;
