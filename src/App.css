@@ -1,0 +1,23 @@
+h1 {
+  text-align: center;
+}
+.togglebutton {
+  font-size: 40px;
+}
+button {
+  font-size: 16px;
+  background-color: #fff;
+  padding: 20px 10px;
+  border: none;
+}
+ul {
+  padding-left: 0px;
+}
+.drawer-list {
+  list-style: none;
+  border-bottom: 1px solid #000;
+}
+input {
+  width: 100%;
+  min-height: 40px;
+}
