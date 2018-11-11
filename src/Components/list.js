@@ -8,6 +8,7 @@ class List extends Component {
   }
   updateQuery = (newQuery) => {
     this.setState({query: newQuery});
+    this.props.filterLocations(newQuery);
   }
 
   render = () => {
@@ -28,7 +29,7 @@ class List extends Component {
                 .locations
                 .map((location, index) => {
                   return(
-                    <li key={index} class="drawer-list">
+                    <li key={index} className="drawer-list">
                       <button key={index}>{location.name}</button>
                     </li>
                   )
