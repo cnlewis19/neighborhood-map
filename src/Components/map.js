@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Map, InfoWindow, GoogleApiWrapper } from 'google-maps-react';
+import NoMap from './nomap.js';
 
 
 const API_KEY = `${process.env.REACT_APP_MAPS_API_KEY}`;
@@ -185,5 +186,5 @@ updateMarkers = (locations) => {
 
 export default GoogleApiWrapper({
 
-  apiKey: API_KEY
+  apiKey: API_KEY, LoadingContainer:NoMap
 })(MapContainer);
